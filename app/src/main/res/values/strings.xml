@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name"> Beauty Touch</string>
+    <string name="title_activity_chose">chose</string>
+    <string name="select_star_for_rating">Select Star For Rating</string>
+    <string name="feed_back">feed back</string>
+    <string name="write_your_feedback">Write Your FeedBack</string>
+    <string name="please_select_the_service_and_name_of_the_salon_and_leave_your_feedback_below">Please select the service and name of the salon and leave your feedback below</string>
+    <string name="name">Name</string>
+    <string name="confirm">Confirm</string>
+    <string name="select_a_service">Select a service</string>
+    <string name="select_salon_name">Select Salon Name</string>
+    <string name="feedback">FeedBack</string>
+    <string name="vision"> \t\t\t Each woman be afraid of changing especially if this changing related to her beauty, because of that we aim to decrease this fear via building an
+        application that helps woman to choose the most suitable haircut depending on \t her face shape.
+    </string>
+
+    <string name="ab2">In this application we aim to help women to choose the most suitable haircut depending on
+    their face shape.</string>
+    <string name="about2"> About Us </string>
+    <string name="services">\t\t Services: \n \t 1-Choose Haircut.  \n\t 2-Reservation for hair cutting ,in addition to the possibility of evaluating the service provided by the salon</string>
+    <string name="contact"> \t \t GET IN TOUCH ! </string>
+</resources>

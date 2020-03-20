@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
+    tools:context=".second">
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="347dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/delius_swash_caps"
+        android:gravity="center"
+        android:text="Welcome To Full Beauty and Co-Experience"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.716"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="339dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/delius_swash_caps"
+        android:gravity="center"
+        android:text="Please Register As "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="234dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/shape"
+        android:fontFamily="@font/delius_swash_caps"
+        android:text="Salon Manager"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="234dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/shape"
+        android:fontFamily="@font/delius_swash_caps"
+        android:text="Customer"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button14"
+        app:layout_constraintVertical_bias="0.0" />
+</android.support.constraint.ConstraintLayout>

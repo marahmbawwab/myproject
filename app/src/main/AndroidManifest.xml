@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.myapplication">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".saloninfo" android:parentActivityName=".third"></activity>
+        <activity
+            android:name=".about"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".vision"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".contactmanager"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".contact"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".thirdmanager"
+            android:parentActivityName=".homemanger" />
+        <activity
+            android:name=".visionus"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".aboutus"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".forgotmanager"
+            android:parentActivityName=".homemanger" />
+        <activity
+            android:name=".signupmanager"
+            android:parentActivityName=".homemanger" />
+        <activity
+            android:name=".homemanger"
+            android:parentActivityName=".second" />
+        <activity
+            android:name=".timetable"
+            android:parentActivityName=".appointpage" />
+        <activity
+            android:name=".appointpage"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".second"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".home"
+            android:parentActivityName=".second" />
+        <activity
+            android:name=".third"
+            android:parentActivityName=".home" />
+        <activity
+            android:name=".account"
+            android:parentActivityName=".home" />
+        <activity
+            android:name=".forgot"
+            android:parentActivityName=".home" />
+        <activity
+            android:name=".choosehair"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".rateus"
+            android:parentActivityName=".third" />
+    </application>
+
+</manifest>
