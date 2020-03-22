@@ -16,7 +16,7 @@ import java.util.Calendar;
 
 public class account extends AppCompatActivity {
      EditText edate ;
-     Button create ;
+     Button create ,edit ;
     TextView back ;
      DatePickerDialog.OnDateSetListener setListener ;
     @Override
@@ -24,6 +24,7 @@ public class account extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
       create= (Button) findViewById(R.id.button2);
+        edit= (Button) findViewById(R.id.button1);
       edate= findViewById(R.id.editText17);
         create .setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +32,13 @@ public class account extends AppCompatActivity {
                 Intent nextScreen = new Intent(getApplicationContext(), home.class);
                 startActivity(nextScreen);
 
+            }
+        });
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(getApplicationContext(), third.class);
+                startActivity(nextScreen);
             }
         });
         Calendar calender =Calendar.getInstance();

@@ -13,16 +13,14 @@ import android.widget.TextView;
 import com.tooltip.Tooltip;
 
 public class third extends AppCompatActivity {
-
-    Button userp, feedinfo, nail, hair, appoint, contact ,about ,vision;
-
+    Button userp, feedinfo, contactsalon, hair, appoint, contact ,about ,vision;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
         userp = (Button) findViewById(R.id.button5);
         feedinfo = (Button) findViewById(R.id.button8);
-        nail = (Button) findViewById(R.id.button6);
+        contactsalon = (Button) findViewById(R.id.button6);
         hair = (Button) findViewById(R.id.button7);
         appoint = (Button) findViewById(R.id.button9);
         contact = (Button) findViewById(R.id.button3);
@@ -32,6 +30,14 @@ public class third extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent nextScreen = new Intent(getApplicationContext(),  account.class);
+                startActivity(nextScreen);
+
+            }
+        });
+        contactsalon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent nextScreen = new Intent(getApplicationContext(),  saloninfo.class);
                 startActivity(nextScreen);
 
             }
@@ -79,7 +85,7 @@ public class third extends AppCompatActivity {
         contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextScreen = new Intent(getApplicationContext(),saloninfo.class);
+                Intent nextScreen = new Intent(getApplicationContext(),contact.class);
                 startActivity(nextScreen);
 
             }

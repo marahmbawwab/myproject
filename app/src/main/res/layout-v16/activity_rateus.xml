@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink"
     tools:context=".rateus">
 
     <TextView
@@ -62,17 +63,19 @@
 
     <com.example.user.myapplication.LinedEditText
         android:id="@+id/linedEditText2"
-        android:layout_width="344dp"
-        android:layout_height="100dp"
+        android:layout_width="360dp"
+        android:layout_height="126dp"
         android:layout_marginTop="24dp"
+        android:background="@color/white"
         android:fontFamily="@font/delius_swash_caps"
         android:gravity="top"
         android:hint="write your feed back "
         android:textColorHint="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/salon" />
 
     <TextView
         android:id="@+id/textView20"
@@ -86,9 +89,9 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/salon" />
+        app:layout_constraintTop_toBottomOf="@+id/linedEditText2" />
 
     <RatingBar
         android:id="@+id/ratingBar"
@@ -120,26 +123,28 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape"
         android:text="Confirm"
+        android:textColor="@color/black"
+        android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintHorizontal_bias="0.601"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar"
-        app:layout_constraintVertical_bias="0.245" />
+        app:layout_constraintVertical_bias="0.141" />
 
     <Spinner
         android:id="@+id/salon"
         android:layout_width="360dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:completionThreshold="1"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.411"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linedEditText2" />
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
 
 </android.support.constraint.ConstraintLayout>

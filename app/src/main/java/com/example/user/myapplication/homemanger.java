@@ -16,7 +16,7 @@ public class homemanger extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homemanger);
         signup=(TextView) findViewById(R.id.textView2) ;
-        forgott=(TextView) findViewById(R.id.textView3) ;
+        forgott=(TextView) findViewById(R.id.textView9) ;
         signin=(Button)findViewById(R.id.button);
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

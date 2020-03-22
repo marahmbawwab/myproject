@@ -12,15 +12,14 @@ import android.widget.EditText;
 import java.util.Calendar;
 
 public class signupmanager extends AppCompatActivity {
-    Button confirm ;
+    Button confirm ,edit ;
     DatePickerDialog.OnDateSetListener setListener ;
-    EditText edate ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signupmanager);
         confirm=(Button)findViewById(R.id.button2);
-        edate= findViewById(R.id.editText17);
+        edit=(Button)findViewById(R.id.button5);
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,25 +27,12 @@ public class signupmanager extends AppCompatActivity {
                 startActivity(nextScreen);
             }
         });
-
-        Calendar calender =Calendar.getInstance();
-        final int year = calender.get(calender.YEAR);
-        final int month = calender.get(calender.MONTH);
-        final int day = calender.get(calender.DAY_OF_MONTH);
-        edate.setOnClickListener(new View.OnClickListener() {
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatePickerDialog datePickerDialog =new DatePickerDialog(signupmanager.this, R.style.DialogTheme ,new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-                        month=month+1;
-                        String date =day +"/"+month +"/"+year ;
-                        edate.setText(date);
-                    }
-                },year,month,day);
-                datePickerDialog.show();
+                Intent nextScreen = new Intent(getApplicationContext(), thirdmanager.class);
+                startActivity(nextScreen);
             }
         });
-
     }
 }

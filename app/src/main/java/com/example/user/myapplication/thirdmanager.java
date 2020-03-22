@@ -39,7 +39,7 @@ public class thirdmanager extends AppCompatActivity {
         rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextScreen = new Intent(getApplicationContext(), rateus.class);
+                Intent nextScreen = new Intent(getApplicationContext(), salonrate.class);
                 startActivity(nextScreen);
 
             }
