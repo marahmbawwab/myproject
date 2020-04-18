@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="namesalon">
+        <item>beauty</item>
+        <item>hairstyle</item>
+    </array>
+    <array name="time">
+        <item>this is time and date </item>
+        <item>this is time and date </item>
+    </array>
+    <array name="date">
+        <item>this is time and date </item>
+        <item>this is time and date </item>
+    </array>
+    <array name="user">
+        <item>this is time and date </item>
+        <item>this is time and date </item>
+    </array>
+  </resources>

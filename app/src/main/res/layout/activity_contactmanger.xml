@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linedEditText2"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.297" />
 
     <EditText
         android:id="@+id/editText3"
@@ -56,18 +56,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+    <EditText
+        android:id="@+id/editText12"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="User Name for Customer"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="276dp"
         android:layout_height="36dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="monospace"
         android:text="@string/contact"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,19 +103,19 @@
 
     <com.example.user.myapplication.LinedEditText
         android:id="@+id/linedEditText2"
-        android:layout_width="341dp"
-        android:layout_height="214dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="352dp"
+        android:layout_height="139dp"
+        android:layout_marginTop="16dp"
         android:background="@color/white"
         android:fontFamily="monospace"
         android:gravity="top"
-        android:hint="write your message here"
+        android:hint=" write your message here"
         android:textColorHint="@color/black"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editText12" />
 
 
 </android.support.constraint.ConstraintLayout>

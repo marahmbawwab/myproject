@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:targetSandboxVersion="1"
     package="com.example.user.myapplication">
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".salonrate" android:parentActivityName=".thirdmanager"></activity>
+        <activity android:name=".ratesee"></activity>
+        <activity
+            android:name=".salonrate"
+            android:parentActivityName=".thirdmanager" />
         <activity
             android:name=".saloninfo"
             android:parentActivityName=".third" />
