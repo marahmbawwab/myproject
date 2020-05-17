@@ -21,16 +21,16 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/simpleProgressBar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <Button
         android:id="@+id/button10"
         android:layout_width="115dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:background="@drawable/shape"
@@ -40,8 +40,8 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simpleProgressBar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/textView25"
+        app:layout_constraintVertical_bias="0.066" />
 
     <ProgressBar
         android:id="@+id/simpleProgressBar"
@@ -58,34 +58,19 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutTextInput5" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="138dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="96dp"
-        android:fontFamily="@font/delius_swash_caps"
-        android:text="Current Passward"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-    <TextView
         android:id="@+id/textView15"
         android:layout_width="128dp"
         android:layout_height="64dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/delius_swash_caps"
         android:text="New Passward"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
         android:id="@+id/textView16"
@@ -128,31 +113,6 @@
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/layoutTextInput3"
-        android:layout_width="200dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="96dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:passwordToggleEnabled="true">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextValue12"
-            android:layout_width="200dp"
-            android:layout_height="51dp"
-            android:width="192dp"
-            android:height="32dp"
-            android:background="@drawable/shape_e"
-            android:drawablePadding="5dp"
-            android:fontFamily="@font/delius_swash_caps"
-            android:imeOptions="actionNext"
-            android:inputType="textPassword"
-            android:textSize="25dp" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
         android:id="@+id/layoutTextInput5"
         android:layout_width="200dp"
         android:layout_height="69dp"
@@ -177,15 +137,16 @@
             android:textSize="25dp" />
     </android.support.design.widget.TextInputLayout>
 
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/layoutTextInput4"
         android:layout_width="200dp"
         android:layout_height="69dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/layoutTextInput3"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
         app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
@@ -202,19 +163,18 @@
             android:textSize="25dp" />
     </android.support.design.widget.TextInputLayout>
 
-
     <TextView
         android:id="@+id/textView24"
         android:layout_width="110dp"
         android:layout_height="40dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/delius_swash_caps"
         android:text="Username"
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/editText5"
-        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
@@ -235,5 +195,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="98dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:text="Strenght"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simpleProgressBar" />
 
 </android.support.constraint.ConstraintLayout>

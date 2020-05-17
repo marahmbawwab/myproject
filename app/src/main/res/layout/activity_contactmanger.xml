@@ -46,7 +46,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:fontFamily="monospace"
-        android:hint="Your Salon Name"
+        android:hint="Your Salon User Name"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textColorHint="@color/black"

@@ -118,20 +118,20 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="172dp"
-        android:layout_height="30dp"
+        android:layout_width="95dp"
+        android:layout_height="32dp"
         android:layout_marginStart="76dp"
         android:layout_marginLeft="76dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="420dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="changepassward "
+        android:text="Forgot ? "
         android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
         app:fontFamily="@font/delius_swash_caps"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

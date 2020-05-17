@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:targetSandboxVersion="1"
-    package="com.example.user.myapplication">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.user.myapplication"
+    android:targetSandboxVersion="1">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ratesee"></activity>
+        <activity android:name=".cutsview"></activity>
+        <activity
+            android:name=".timetableapp"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".editmanager"
+            android:parentActivityName=".thirdmanager" />
+        <activity android:name=".ratesee" />
         <activity
             android:name=".salonrate"
             android:parentActivityName=".thirdmanager" />
@@ -83,5 +92,17 @@
             android:name=".rateus"
             android:parentActivityName=".third" />
     </application>
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
