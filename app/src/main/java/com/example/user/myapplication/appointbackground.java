@@ -33,9 +33,9 @@ public class appointbackground extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {
         String type= strings[0];
         String usern =strings[1];
-        String url = "http://192.168.1.113/salonname.php";
-        String aurl = "http://192.168.1.113/showapp.php";
-        String urlinsert = "http://192.168.1.113/insertappoint.php";
+        String url = "http://192.168.1.16/salonname.php";
+        String aurl = "http://192.168.1.16/showapp.php";
+        String urlinsert = "http://192.168.1.16/insertappoint.php";
         Date date1=null ;
         Date startdate = null;
         Date enddate =null;
@@ -177,7 +177,7 @@ public class appointbackground extends AsyncTask<String,Void,String> {
         return null;
     }
     public boolean getapps(String sname ,String date , String time) throws IOException, JSONException, ParseException {
-        String urlget = "http://192.168.1.113/getallapp.php";
+        String urlget = "http://192.168.1.16/getallapp.php";
         URL salonurl = new URL(urlget);
         HttpURLConnection httpurlc = (HttpURLConnection) salonurl.openConnection();
         httpurlc.setRequestMethod("POST");

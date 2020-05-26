@@ -6,12 +6,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/main"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cutsview"></activity>
+        <activity android:name=".gallary"></activity>
+        <activity android:name=".my_grid" />
+        <activity
+            android:name=".activity_grid_item"
+            android:parentActivityName=".cutsview" />
+        <activity android:name=".viewcuts" />
+        <activity
+            android:name=".cutspage"
+            android:parentActivityName=".cutsview" />
+        <activity
+            android:name=".cutsview"
+            android:parentActivityName=".choosehair" />
         <activity
             android:name=".timetableapp"
             android:parentActivityName=".thirdmanager" />
@@ -92,17 +105,19 @@
             android:name=".rateus"
             android:parentActivityName=".third" />
     </application>
-    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 </manifest>

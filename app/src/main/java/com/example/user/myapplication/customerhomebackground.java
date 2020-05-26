@@ -1,6 +1,6 @@
 package com.example.user.myapplication;
 
-        import android.app.AlertDialog;
+import android.app.AlertDialog;
         import android.content.*;
         import android.content.Intent;
         import android.os.AsyncTask;
@@ -26,9 +26,9 @@ public class  customerhomebackground  extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String ... params) {
         String type= params[0];
-        String login_url = "http://192.168.1.113/login.php";
-        String signup_url = "http://192.168.1.113/signupc.php";
-        String forgortcustomer_url="http://192.168.1.113/forgotc.php";
+        String login_url = "http://192.168.1.16/login.php";
+        String signup_url = "http://192.168.1.16/signupc.php";
+        String forgortcustomer_url="http://192.168.1.16/forgotc.php";
         if(type.equals("login")){
             try {
                 String username = params[1];
