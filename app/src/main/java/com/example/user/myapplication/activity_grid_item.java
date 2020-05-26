@@ -133,12 +133,4 @@ public class activity_grid_item extends AppCompatActivity {
             return view1;
         }
     }
-
-    public static String convertArrayToStringMethod(String[] strArray) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < strArray.length; i++) {
-            stringBuilder.append(strArray[i]);
-        }
-        return stringBuilder.toString();
-    }
 }

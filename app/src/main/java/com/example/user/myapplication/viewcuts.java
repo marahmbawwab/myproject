@@ -1,76 +1,57 @@
 package com.example.user.myapplication;
 
-import android.annotation.SuppressLint;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.PointF;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 public class viewcuts extends AppCompatActivity implements View.OnTouchListener {
-    TextView gridData;
     private ImageView imageView ;
     String chair ;
-    String user ;
     private static final String TAG = "Touch";
-    // These matrices will be used to move and zoom image
     Matrix matrix = new Matrix();
     Matrix savedMatrix = new Matrix();
-    // We can be in one of these 3 states
     static final int NONE = 0;
     static final int DRAG = 1;
     static final int ZOOM = 2;
     int mode = NONE;
-    // Remember some things for zooming
     PointF start = new PointF();
     PointF mid = new PointF();
     float oldDist = 1f;
     Button b ;
-    String path ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewcuts);
-      //  gridData = findViewById(R.id.griddata);
-
         imageView = findViewById(R.id.imageView);
        b =(Button)findViewById(R.id.button18);
         Intent intent = getIntent();
-       // String receivedName =  intent.getStringExtra("name");
         int receivedImage = intent.getIntExtra("image",0);
          chair =  intent.getStringExtra("hair");
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         Bitmap im =decodeBase64(pref.getString("image", null));
-        //  gridData.setText(receivedName);
         imageView.setImageResource(receivedImage);
         final BitmapDrawable ob = new BitmapDrawable(getResources(), im);
         imageView.setBackgroundDrawable(ob);
@@ -83,16 +64,15 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
             public void onClick(View v) {
                 imageView.setDrawingCacheEnabled(true);
                 Bitmap kk = imageView.getDrawingCache();
-                String mm = encodeTobase64(kk);
-           //  try {
-                  // updatepoint(chair);
+           try {
+                   updatepoint(chair);
                    SaveImage(kk);
-                   // save(mm);
-              //  } catch (ExecutionException e) {
-                //    e.printStackTrace();
-               // } catch (InterruptedException e) {
-                 //   e.printStackTrace();
-               // }
+
+              } catch (ExecutionException e) {
+                  e.printStackTrace();
+              } catch (InterruptedException e) {
+                    e.printStackTrace();
+               }
             }
         });
 
@@ -156,11 +136,9 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
         }
 
         view.setImageMatrix(matrix);
-        return true; // indicate event was handled
+        return true;
     }
-    /**
-     * Show an event in the LogCat view, for debugging
-     */
+
     private void dumpEvent(MotionEvent event) {
         String names[] = {"DOWN", "UP", "MOVE", "CANCEL", "OUTSIDE",
                 "POINTER_DOWN", "POINTER_UP", "7?", "8?", "9?"};
@@ -220,7 +198,7 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
         File myDir = new File(root + "/beauty_touch");
         myDir.mkdirs();
         Random generator = new Random();
-        int n = 10000;
+        int n = 10000 ;
         n = generator.nextInt(n);
         String fname = "Image-"+ n +".jpg";
         File file = new File (myDir, fname);
@@ -241,23 +219,6 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
                         Log.i("ExternalStorage", "-> uri=" + uri);
                     }
                 });
-    }
-
-    public void save (String s) throws ExecutionException, InterruptedException {
-        Saveimage im = new Saveimage(this);
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        user=pref.getString("usern", null) ;
-        String val = im.execute("save",user,s).get();
-        Toast.makeText(this,val,Toast.LENGTH_SHORT).show();
-    }
-    public static String encodeTobase64(Bitmap image) {
-        Bitmap immage = image;
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        immage.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        byte[] b = baos.toByteArray();
-        String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
-        Log.d("Image Log:", imageEncoded);
-        return imageEncoded;
     }
 }
 
