@@ -19,4 +19,8 @@
     <string name="about2"> About Us </string>
     <string name="services">\t\t Services: \n \t 1-Choose Haircut.  \n\t 2-Reservation for hair cutting ,in addition to the possibility of evaluating the service provided by the salon</string>
     <string name="contact"> \t \t GET IN TOUCH ! </string>
+    <string name="brush">Brush</string>
+    <string name="erase">Erase</string>
+    <string name="save">Save</string>
+    <string name="paint">Paint</string>
 </resources>

@@ -2,6 +2,8 @@ package com.example.user.myapplication;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Pattern;
 
-public class editmanager extends AppCompatActivity implements TextWatcher {
+public class editmanager extends AppCompatActivity  {
     String usern, saloninfo, salonpassward, salonphone, emailaddress, address;
     Button edit ;
     EditText username, salonaddress, phone, email, passward;
@@ -34,7 +36,17 @@ public class editmanager extends AppCompatActivity implements TextWatcher {
         passward = (EditText) findViewById(R.id.editText9);
         edit = (Button) findViewById(R.id.button5);
         feedback = (LinedEditText) findViewById(R.id.linedEditText2);
-       username.addTextChangedListener(this);
+        SharedPreferences spreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        username .setText(spreferences.getString("user", null));
+        usern=spreferences.getString("user", null);
+        username.setEnabled(false);
+        try {
+            show(usern);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +84,7 @@ public class editmanager extends AppCompatActivity implements TextWatcher {
         salonphone = phone.getText().toString();
         salonpassward = passward.getText().toString();
         saloninfo = feedback.getText().toString();
+        show(usern);
         boolean notempty =true ;
         String type = "edit";
         if ( (usern.equals("")) || (address.equals("")) || (emailaddress.equals("")) || (salonphone.equals("")) || (salonpassward.equals(""))) {
@@ -105,30 +118,10 @@ public class editmanager extends AppCompatActivity implements TextWatcher {
         }
     }
 
-    @Override
-    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-    }
-
-    @Override
-    public void onTextChanged(CharSequence s, int start, int before, int count) {
-        try {
-            show(s.toString());
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void afterTextChanged(Editable s) {
-    }
     public void show (String user) throws ExecutionException, InterruptedException {
      backgroundworker back = new backgroundworker(this);
           String  myvalue =back.execute("show",  user, address, emailaddress, salonphone, salonpassward, saloninfo).get();
         String[] n =myvalue.split("\n");
-        // Convert String Array to List
         List<String> list = Arrays.asList(n);
         if(list.contains("you")&& list.contains("are")&&list.contains("not")&&list.contains("reg")){
             Toast.makeText(this,"you are not registerd", Toast.LENGTH_SHORT).show();
@@ -145,14 +138,5 @@ public class editmanager extends AppCompatActivity implements TextWatcher {
             email.setText(n[4]);
             feedback.setText(n[5]);
         }
-          //  myvalue = back.execute("show", user).get();
-        /*    String[] str = myvalue.split("\n");
-            username.setText(str[0]);
-            passward.setText(str[1]);
-            salonaddress.setText(str[2]);
-            phone.setText(str[3]);
-            email.setText(str[4]);
-            feedback.setText(str[5]);*/
-     //   username.setText(myvalue);
     }
 }

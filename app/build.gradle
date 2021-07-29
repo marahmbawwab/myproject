@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -8,6 +7,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -35,5 +35,8 @@ dependencies {
     implementation 'com.github.yesterselga:password-strength-checker-android:v1.0'
     implementation "com.android.support:support-compat:28.0.0"
     implementation 'com.squareup.okhttp3:okhttp:3.4.1'
-//    implementation project(path: ':openCVLibrary345')
+    implementation 'com.github.sujithkanna:smileyrating:1.6.8'
+    implementation 'com.google.android.gms:play-services:12.0.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    //  implementation 'com.google.android.gms:play-services-maps:17.0.0'
 }

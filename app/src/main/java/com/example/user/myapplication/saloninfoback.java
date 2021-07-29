@@ -21,8 +21,10 @@ public class saloninfoback extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {
         String type =strings[0];
         String salonn =strings[1];
-        String url ="http://192.168.1.16/showsaloninfo.php";
-        String urlapp ="http://192.168.1.16/showsalonapp.php";
+         String url ="http://192.168.1.114/showsaloninfo.php";
+         String urlapp ="http://192.168.1.114/showsalonapp.php";
+       // String url ="http://192.168.1.16/showsaloninfo.php";
+       // String urlapp ="http://192.168.1.16/showsalonapp.php";
         if (type.equals("showsalon")){
             try {
                 URL urls =  new URL(url);

@@ -33,13 +33,17 @@ public class appointbackground extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {
         String type= strings[0];
         String usern =strings[1];
-        String url = "http://192.168.1.16/salonname.php";
-        String aurl = "http://192.168.1.16/showapp.php";
-        String urlinsert = "http://192.168.1.16/insertappoint.php";
+       String url = "http://192.168.1.114/salonname.php";
+        String aurl = "http://192.168.1.114/showapp.php";
+        String urlinsert = "http://192.168.1.114/insertappoint.php";
+
+       /* String url = "http://192.168.1.114/salonname.php";
+          String aurl = "http://192.168.1.114/showapp.php";
+          String urlinsert = "http://192.168.1.114/insertappoint.php";*/
+        String urlget = "http://192.168.1.114/discount.php";
         Date date1=null ;
         Date startdate = null;
         Date enddate =null;
-
         if(type.equals("getsalonname")){
             try {
                 URL salonurl = new URL(url);
@@ -174,10 +178,43 @@ public class appointbackground extends AsyncTask<String,Void,String> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals("getpoint")){
+            String sname =strings[2];
+         try {
+                URL salonurl = new URL(urlget);
+                HttpURLConnection httpurlc = (HttpURLConnection) salonurl.openConnection();
+                httpurlc.setRequestMethod("POST");
+                httpurlc.setDoOutput(true);
+                httpurlc.setDoInput(true);
+                OutputStream outputstream = httpurlc.getOutputStream();
+                BufferedWriter bufferwriter = new BufferedWriter(new OutputStreamWriter(outputstream,"UTF-8"));
+                String postdata= URLEncoder.encode("usern","UTF-8")+"="+URLEncoder.encode(usern,"UTF-8")+"&"+URLEncoder.encode("sname","UTF-8")+"="+URLEncoder.encode(sname,"UTF-8");
+                bufferwriter.write(postdata);
+                bufferwriter.flush();
+                bufferwriter.close();
+                outputstream.close();
+                InputStream inputstream = httpurlc.getInputStream();
+                BufferedReader bufferreader= new BufferedReader(new InputStreamReader(inputstream));
+                StringBuilder sb = new StringBuilder();
+                String json=  "";
+                while((json= bufferreader.readLine()) != null){
+                    sb.append(json);
+                }
+                String sbstr= sb.toString();
+                String s= "";
+//                final JSONObject obj = new JSONObject(sbstr);
+  //              s = s + obj.getString("result") ;
+                return sbstr;
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
         return null;
     }
     public boolean getapps(String sname ,String date , String time) throws IOException, JSONException, ParseException {
-        String urlget = "http://192.168.1.16/getallapp.php";
+      //  String urlget = "http://192.168.1.16/getallapp.php";
+        String urlget = "http://192.168.1.114/getallapp.php";
         URL salonurl = new URL(urlget);
         HttpURLConnection httpurlc = (HttpURLConnection) salonurl.openConnection();
         httpurlc.setRequestMethod("POST");

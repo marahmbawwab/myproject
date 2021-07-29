@@ -27,7 +27,7 @@ public class background extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... strings) {
      bitmap= decodeBase64(strings[0]);
-        String postUrl= "http://192.168.1.16:5000/";
+        String postUrl= "http://192.168.1.114:5000/";
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] byteArray = stream.toByteArray();
@@ -53,7 +53,6 @@ public class background extends AsyncTask<String,Void,String> {
                     }
                 });
             }
-
             private void runOnUiThread(Runnable runnable) {
             }
 

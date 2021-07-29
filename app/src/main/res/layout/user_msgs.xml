@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="306dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp"
+
+        app:cardCornerRadius="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/msgss">
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="309dp"
+                android:layout_height="51dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.028"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/replay" />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="222dp"
+                android:layout_height="33dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/umsg"
+                android:layout_width="392dp"
+                android:layout_height="80dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:background="@drawable/border_r"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/username" />
+
+            <TextView
+                android:id="@+id/salonname"
+                android:layout_width="385dp"
+                android:layout_height="49dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/umsg" />
+
+            <TextView
+                android:id="@+id/replay"
+                android:layout_width="383dp"
+                android:layout_height="84dp"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:background="@drawable/border_r"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/salonname" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

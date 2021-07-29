@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/s7"
+    android:background="@color/pink"
     tools:context=".account">
 
     <Button
@@ -112,8 +112,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="215dp"
-        android:layout_height="34dp"
+        android:layout_width="238dp"
+        android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"

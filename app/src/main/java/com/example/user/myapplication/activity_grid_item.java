@@ -35,15 +35,20 @@ public class activity_grid_item extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //finding listview
+        try {
+            getimage();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         GridView gridView = findViewById(R.id.gridview);
         CustomAdapter customAdapter = new CustomAdapter();
         gridView.setAdapter(customAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-              //  Toast.makeText(getApplicationContext(),points[i],Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(),viewcuts.class);
+               Intent intent = new Intent(getApplicationContext(),viewcuts.class);
                 intent.putExtra("name",points[i]);
                 if (s.equals("round")) {
                     intent.putExtra("image",roundcutts[i]);
@@ -67,6 +72,11 @@ public class activity_grid_item extends AppCompatActivity {
                 }
                 startActivity(intent);
             } });
+    }
+    public void getimage() throws ExecutionException, InterruptedException {
+       faceback back = new faceback(this);
+       String val = back.execute("getface").get();
+       Toast.makeText(this,val,Toast.LENGTH_LONG).show();
     }
     public String [] getpoints() throws ExecutionException, InterruptedException {
         SharedPreferences spref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

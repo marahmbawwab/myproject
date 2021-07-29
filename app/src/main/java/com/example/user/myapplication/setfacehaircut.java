@@ -24,10 +24,18 @@ public class setfacehaircut extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... strings) {
         String type =strings[0];
         String usern =strings[1];
-        String urlset="http://192.168.1.16/setfaceshape.php";
+       /* String urlset="http://192.168.1.16/setfaceshape.php";
         String urlget ="http://192.168.1.16/getface.php";
         String urlgetpoint ="http://192.168.1.16/getpoint.php";
         String urlsetpoint ="http://192.168.1.16/setpoint.php";
+        String urlsetimage ="http://192.168.1.16/setimage.php";
+        String urlgetimage="http://192.168.1.16/getimage.php";*/
+        String urlset="http://192.168.1.114/setfaceshape.php";
+        String urlget ="http://192.168.1.114/getface.php";
+        String urlgetpoint ="http://192.168.1.114/getpoint.php";
+        String urlsetpoint ="http://192.168.1.114/setpoint.php";
+        String urlsetimage ="http://192.168.1.114/setimage.php";
+        String urlgetimage="http://192.168.1.114/getimage.php";
         if (type.equals("set")){
             try {
                 String shape =strings[2];
@@ -111,13 +119,6 @@ public class setfacehaircut extends AsyncTask<String,Void,String> {
                 String sbres =sb.toString().trim();
                 final JSONObject obj = new JSONObject(sbres);
                String sbes = obj.getString("result");
-               /* String[] k = sbres.split("bb");
-                String sbb = null;
-                String points [] = new String[k.length];
-                for (int i =0 ;i<k.length;i++){
-                    points[i]="number of points:"+""+k[i] +"bb";
-                    sbb += ""+points[i];
-                }*/
                 return sbes;
             } catch (Exception e) {
                 return null;
@@ -153,6 +154,66 @@ public class setfacehaircut extends AsyncTask<String,Void,String> {
                 return null;
             }
         }
-        return null ;
+        else if (type.equals("setimage")){
+        try {
+            String image =strings[2];
+            URL urls =  new URL(urlsetimage);
+            HttpURLConnection connection = (HttpURLConnection) urls.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setDoOutput(true);
+            connection.setDoInput(true);
+            OutputStream out = connection.getOutputStream();
+            BufferedWriter buffer = new BufferedWriter(new OutputStreamWriter(out,"UTF-8"));
+            String postdata = URLEncoder.encode("image","UTF-8")+"="+URLEncoder.encode(image,"UTF-8")+"&"+URLEncoder.encode("user","UTF-8")+"="+URLEncoder.encode(usern,"UTF-8");
+            buffer.write(postdata);
+            buffer.flush();
+            buffer.close();
+            out.close();
+            InputStream inputStream = connection.getInputStream();
+            StringBuilder sb = new StringBuilder();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream ));
+            String json ="";
+            while ((json = bufferedReader.readLine()) != null) {
+                sb.append(json+"\n");
+            }
+            inputStream.close();
+            String sbres =sb.toString().trim();
+            return sbres;
+        } catch (Exception e) {
+            return null;
+        }
     }
-}
+        else if (type.equals("getimage")){
+            try {
+                URL urls =  new URL(urlgetimage);
+                HttpURLConnection connection = (HttpURLConnection) urls.openConnection();
+                connection.setRequestMethod("POST");
+                connection.setDoOutput(true);
+                connection.setDoInput(true);
+                OutputStream out = connection.getOutputStream();
+                BufferedWriter buffer = new BufferedWriter(new OutputStreamWriter(out,"UTF-8"));
+                String postdata = URLEncoder.encode("user","UTF-8")+"="+URLEncoder.encode(usern,"UTF-8");
+                buffer.write(postdata);
+                buffer.flush();
+                buffer.close();
+                out.close();
+                InputStream inputStream = connection.getInputStream();
+                StringBuilder sb = new StringBuilder();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream ));
+                String json ="";
+                while ((json = bufferedReader.readLine()) != null) {
+                    sb.append(json+"\n");
+                }
+                inputStream.close();
+                String sbres =sb.toString().trim();
+                final JSONObject obj = new JSONObject(sbres);
+                String s = "";
+                sbres = obj.getString("imm");
+                return sbres;
+            } catch (Exception e) {
+                return null;
+            }
+        }
+        return null ;
+          }
+         }

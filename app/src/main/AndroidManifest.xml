@@ -13,7 +13,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".gallary" android:parentActivityName=".third"></activity>
+        <activity android:name=".discount" android:parentActivityName=".appointpage"></activity>
+        <activity
+            android:name=".managerrate"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".user_msg_show"
+            android:parentActivityName=".start_chat" />
+        <activity
+            android:name=".start_chat"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".main_chat"
+            android:parentActivityName=".thirdmanager" />
+        <activity
+            android:name=".erasecut"
+            android:parentActivityName=".activity_grid_item" />
+        <activity
+            android:name=".show_rates"
+            android:parentActivityName=".basic_rate" />
+        <activity
+            android:name=".choice"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".user_rate"
+            android:parentActivityName=".basic_rate" />
+        <activity
+            android:name=".basic_rate"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".salon_main"
+            android:parentActivityName=".choice" />
+        <activity android:name=".user_signup" />
+        <activity android:name=".mmm" />
+        <activity
+            android:name=".managerprofile"
+            android:parentActivityName=".homemanger" />
+        <activity
+            android:name=".userprofile"
+            android:parentActivityName=".home" />
+        <activity
+            android:name=".edituser"
+            android:parentActivityName=".third" />
+        <activity
+            android:name=".gallary"
+            android:parentActivityName=".third" />
         <activity android:name=".my_grid" />
         <activity
             android:name=".activity_grid_item"
@@ -37,7 +81,7 @@
             android:parentActivityName=".thirdmanager" />
         <activity
             android:name=".saloninfo"
-            android:parentActivityName=".third" />
+            android:parentActivityName=".choice" />
         <activity
             android:name=".about"
             android:parentActivityName=".third" />
@@ -52,7 +96,7 @@
             android:parentActivityName=".third" />
         <activity
             android:name=".thirdmanager"
-            android:parentActivityName=".homemanger" />
+            android:parentActivityName=".managerprofile" />
         <activity
             android:name=".visionus"
             android:parentActivityName=".thirdmanager" />
@@ -91,7 +135,7 @@
             android:parentActivityName=".second" />
         <activity
             android:name=".third"
-            android:parentActivityName=".home" />
+            android:parentActivityName=".userprofile" />
         <activity
             android:name=".account"
             android:parentActivityName=".home" />
@@ -105,6 +149,10 @@
             android:name=".rateus"
             android:parentActivityName=".third" />
     </application>
+
+    <meta-data
+        android:name="com.google.android.maps.v2.API_KEY"
+        android:value="@string/google_maps_key" />
     <uses-feature android:name="android.hardware.camera.any" />
     <uses-feature android:name="android.hardware.camera2.full" />
 
@@ -117,7 +165,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

@@ -38,7 +38,7 @@ public class my_grid extends AppCompatActivity {
 
     }
     void connectServer(View v) {
-        String postUrl= "http://192.168.1.114:5000/";
+        String postUrl= "http://192.168.1.4:5000/";
     //    String postBodyText="Hello";
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         Bitmap bitmap = null;

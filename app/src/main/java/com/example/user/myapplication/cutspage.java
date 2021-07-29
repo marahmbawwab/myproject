@@ -70,7 +70,6 @@ public class cutspage extends AppCompatActivity implements View.OnTouchListener 
             }
         });
     }
-    // method for base64 to bitmap
     public static Bitmap decodeBase64(String input) {
         byte[] decodedByte = Base64.decode(input, 0);
         return BitmapFactory
@@ -123,11 +122,8 @@ public class cutspage extends AppCompatActivity implements View.OnTouchListener 
         }
 
         view.setImageMatrix(matrix);
-        return true; // indicate event was handled
+        return true;
     }
-    /**
-     * Show an event in the LogCat view, for debugging
-     */
     private void dumpEvent(MotionEvent event) {
         String names[] = {"DOWN", "UP", "MOVE", "CANCEL", "OUTSIDE",
                 "POINTER_DOWN", "POINTER_UP", "7?", "8?", "9?"};
@@ -154,17 +150,11 @@ public class cutspage extends AppCompatActivity implements View.OnTouchListener 
         Log.d(TAG, sb.toString());
     }
 
-    /**
-     * Determine the space between the first two fingers
-     */
     private float spacing(MotionEvent event) {
         float x = event.getX(0) - event.getX(1);
         float y = event.getY(0) - event.getY(1);
         return (float) Math.sqrt(x * x + y * y);
     }
-    /**
-     * Calculate the mid point of the first two fingers
-     */
     private void midPoint(PointF point, MotionEvent event) {
         float x = event.getX(0) + event.getX(1);
         float y = event.getY(0) + event.getY(1);

@@ -21,19 +21,17 @@ public class cutsview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cutsview);
-      //  Bitmap bitmap = (Bitmap) getIntent().getParcelableExtra("Image");
         ImageButton oval = (ImageButton)findViewById(R.id.imageButton2);
         ImageButton round = (ImageButton)findViewById(R.id.imageButton4);
         ImageButton oblong = (ImageButton)findViewById(R.id.imageButton3);
         ImageButton heart = (ImageButton)findViewById(R.id.imageButton5);
         ImageButton square = (ImageButton)findViewById(R.id.imageButton1);
         Toast.makeText(this, "please press on the photo to choose your face shape ", Toast.LENGTH_LONG).show();
-      oval.setOnClickListener(new View.OnClickListener() {
+        oval.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                     set("oval");
-
             }
         });
         heart.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +39,6 @@ public class cutsview extends AppCompatActivity {
             public void onClick(View view) {
 
                     set("heart");
-
             }
         });
         round.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +60,17 @@ public class cutsview extends AppCompatActivity {
                 set("oblong");
             }
         });
+        SharedPreferences spreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+     /*   String im =spreferences.getString("image", null);
+        background b = new background(this);
+        try {
+            String val = b.execute(im).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
+
     }
     public void set(String shape) {
         SharedPreferences spreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

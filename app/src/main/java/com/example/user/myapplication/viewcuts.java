@@ -5,13 +5,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -27,12 +32,13 @@ import java.io.FileOutputStream;
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
-public class viewcuts extends AppCompatActivity implements View.OnTouchListener {
+public class viewcuts extends AppCompatActivity implements View.OnTouchListener    {
     private ImageView imageView ;
     String chair ;
     private static final String TAG = "Touch";
     Matrix matrix = new Matrix();
     Matrix savedMatrix = new Matrix();
+    Bitmap kk ;
     static final int NONE = 0;
     static final int DRAG = 1;
     static final int ZOOM = 2;
@@ -40,31 +46,34 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
     PointF start = new PointF();
     PointF mid = new PointF();
     float oldDist = 1f;
-    Button b ;
+    Button b ,draw ,view;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewcuts);
+       setContentView(R.layout.activity_viewcuts);
         imageView = findViewById(R.id.imageView);
-       b =(Button)findViewById(R.id.button18);
+        b =(Button)findViewById(R.id.button18);
+        draw =(Button)findViewById(R.id.button11);
+        view =(Button)findViewById(R.id.button1);
         Intent intent = getIntent();
-        int receivedImage = intent.getIntExtra("image",0);
-         chair =  intent.getStringExtra("hair");
+        final int receivedImage = intent.getIntExtra("image",0);
+        chair =  intent.getStringExtra("hair");
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Bitmap im =decodeBase64(pref.getString("image", null));
-        imageView.setImageResource(receivedImage);
+        final Bitmap im =decodeBase64(pref.getString("image", null));
+       imageView.setImageResource(receivedImage);
         final BitmapDrawable ob = new BitmapDrawable(getResources(), im);
-        imageView.setBackgroundDrawable(ob);
+      imageView.setBackgroundDrawable(ob);
         FindId();
-        imageView.setOnTouchListener(this);
+      imageView.setOnTouchListener(this);
         imageView.setScaleType(ImageView.ScaleType.MATRIX);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 imageView.setDrawingCacheEnabled(true);
-                Bitmap kk = imageView.getDrawingCache();
-           try {
+                kk = imageView.getDrawingCache();
+          try {
                    updatepoint(chair);
                    SaveImage(kk);
 
@@ -75,7 +84,6 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
                }
             }
         });
-
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -88,7 +96,6 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
     public void onBackPressed() {
         super.onBackPressed();
     }
-
     private void FindId() {
         imageView = findViewById(R.id.imageView);
     }
@@ -220,6 +227,6 @@ public class viewcuts extends AppCompatActivity implements View.OnTouchListener 
                     }
                 });
     }
-}
 
+}
 

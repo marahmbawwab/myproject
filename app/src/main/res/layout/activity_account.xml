@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/s7"
+    android:background="@color/pink"
     tools:context=".account">
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="162dp"
-        android:layout_height="61dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_width="191dp"
+        android:layout_height="39dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/createacc"
         android:text="create account"
@@ -20,24 +18,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText17"
-        app:layout_constraintVertical_bias="0.215" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="172dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="56dp"
-        android:background="@drawable/createacc"
-        android:text="Edit Your Information "
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText17"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <EditText
         android:id="@+id/editText8"
@@ -143,8 +126,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="215dp"
-        android:layout_height="34dp"
+        android:layout_width="253dp"
+        android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="24dp"
